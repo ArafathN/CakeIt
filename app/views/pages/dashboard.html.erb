@@ -1,0 +1,37 @@
+<h1>Dashboard</h1>
+
+<div class="row">
+<div class="col-md-4">
+<h3>Cakes
+<%= link_to 'New Cake', new_cake_path, class:'btn btn-info btn-sm'%></h3>
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Available</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @cakes.each do |cake| %>
+        <tr>
+          <td><%= cake.id %></td>
+          <td><%= link_to cake.name, cake_path(cake) %></td>
+          <td><%= cake.availability %></td>
+          <td><%= link_to 'Edit', edit_cake_path(cake) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+<div class="col-md-4">
+<h3>Achats</h3>
+</div>
+
+<div class="col-md-4">
+<h3>Ventes</h3>
+</div>
+
+</div>
