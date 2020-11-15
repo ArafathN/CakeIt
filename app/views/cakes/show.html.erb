@@ -1,29 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cake.name %>
-</p>
+<div class='row'>
+<div class="col-md-6">
+<%= image_tag "Rainbow.jpg", class:'img-responsive' %>
+</div>
+<div class="col-md-6">
 
-<p>
-  <strong>Author:</strong>
-  <%= @cake.author %>
-</p>
+<h3><%= @cake.name %> by <%= @cake.author %></h3>
+<p><%= @cake.description %></p>
+<p class="text-center"><strong><%= @cake.price %>€</strong></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @cake.description %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @cake.price %>
-</p>
+</div>
+</div>
 
-<p>
-  <strong>Availability:</strong>
-  <%= @cake.availability %>
-</p>
+
 
 <%= link_to 'Edit', edit_cake_path(@cake) %> |
 <%= link_to 'Back', cakes_path %>

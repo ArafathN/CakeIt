@@ -4,7 +4,7 @@ class CakesController < ApplicationController
   # GET /cakes
   # GET /cakes.json
   def index
-    @cakes = Cake.all
+    @cakes = Cake.all.where(availability:true)
   end
 
   # GET /cakes/1
