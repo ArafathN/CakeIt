@@ -20,6 +20,7 @@ class CakesController < ApplicationController
 
   # GET /cakes/1/edit
   def edit
+    authorize! :manage, @cake
   end
 
   # POST /cakes
@@ -41,6 +42,7 @@ class CakesController < ApplicationController
   # PATCH/PUT /cakes/1
   # PATCH/PUT /cakes/1.json
   def update
+    authorize! :manage, @cake
     respond_to do |format|
       if @cake.update(cake_params)
         format.html { redirect_to @cake, notice: 'Cake was successfully updated.' }
@@ -55,6 +57,7 @@ class CakesController < ApplicationController
   # DELETE /cakes/1
   # DELETE /cakes/1.json
   def destroy
+    authorize! :manage, @cake
     @cake.destroy
     respond_to do |format|
       format.html { redirect_to cakes_url, notice: 'Cake was successfully destroyed.' }
