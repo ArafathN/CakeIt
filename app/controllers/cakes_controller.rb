@@ -68,7 +68,7 @@ class CakesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cake
-      @cake = Cake.find(params[:id])
+      @cake = Cake.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
