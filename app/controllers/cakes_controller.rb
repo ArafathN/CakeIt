@@ -1,4 +1,5 @@
 class CakesController < ApplicationController
+  before_action :authenticate_user!,only: [:create, :new, :edit, :update, :destroy]
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   # GET /cakes
@@ -24,7 +25,7 @@ class CakesController < ApplicationController
   # POST /cakes
   # POST /cakes.json
   def create
-    @cake = Cake.new(cake_params)
+    @cake = current_user.cakes.new(cake_params)
 
     respond_to do |format|
       if @cake.save
