@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cake.name %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @cake.author %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cake.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cake.price %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @cake.availability %>
+</p>
+
+<%= link_to 'Edit', edit_cake_path(@cake) %> |
+<%= link_to 'Back', cakes_path %>
